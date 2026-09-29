@@ -1,0 +1,39 @@
+[
+  {
+    "name": "app_config",
+    "schema": "platform",
+    "comment": "Application-level configuration keys",
+    "columns": [
+      {"name": "id", "data_type": "INT", "nullable": false, "primary_key": true},
+      {"name": "config_key", "data_type": "VARCHAR(128)", "nullable": false},
+      {"name": "config_value", "data_type": "VARCHAR(1024)", "nullable": false},
+      {"name": "is_active", "data_type": "TINYINT", "nullable": false, "default": "1"},
+      {"name": "updated_at", "data_type": "DATETIME", "nullable": false, "default": "CURRENT_TIMESTAMP"}
+    ]
+  },
+  {
+    "name": "feature_flag",
+    "schema": "platform",
+    "comment": "Feature flag definitions",
+    "columns": [
+      {"name": "id", "data_type": "INT", "nullable": false, "primary_key": true},
+      {"name": "flag_code", "data_type": "VARCHAR(64)", "nullable": false},
+      {"name": "flag_name", "data_type": "VARCHAR(128)", "nullable": false},
+      {"name": "enabled", "data_type": "TINYINT", "nullable": false, "default": "0"},
+      {"name": "description", "data_type": "VARCHAR(512)", "nullable": true}
+    ]
+  },
+  {
+    "name": "report_dimension",
+    "schema": "analytics",
+    "comment": "Dynamic Views report dimensions",
+    "columns": [
+      {"name": "id", "data_type": "INT", "nullable": false, "primary_key": true},
+      {"name": "dimension_code", "data_type": "VARCHAR(64)", "nullable": false},
+      {"name": "display_name", "data_type": "VARCHAR(128)", "nullable": false},
+      {"name": "source_column", "data_type": "VARCHAR(128)", "nullable": false},
+      {"name": "data_type", "data_type": "VARCHAR(32)", "nullable": false, "default": "STRING"},
+      {"name": "is_filterable", "data_type": "TINYINT", "nullable": false, "default": "1"}
+    ]
+  }
+]

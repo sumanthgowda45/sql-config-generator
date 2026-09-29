@@ -1,0 +1,2 @@
+# Standard library only (tkinter + csv/json).
+# On Debian/Ubuntu GUI hosts: sudo apt install python3-tk

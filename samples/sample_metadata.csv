@@ -1,0 +1,6 @@
+table_name,schema,column_name,data_type,nullable,primary_key,default,table_comment,column_comment
+notification_template,platform,id,INT,false,true,,Email/SMS templates,
+notification_template,platform,template_code,VARCHAR(64),false,false,,Email/SMS templates,
+notification_template,platform,channel,VARCHAR(32),false,false,'EMAIL',Email/SMS templates,
+notification_template,platform,subject,VARCHAR(255),true,false,,Email/SMS templates,
+notification_template,platform,body,TEXT,false,false,,Email/SMS templates,
